@@ -3,9 +3,10 @@
     "processor":"RP2040",
     "architecture":"CORTEX_M0_PLUS",
     "toolchain":"ARM_GCC",
-    "post_process":"",
+    "post_process":"./build/elf2uf2 <OUTPUT_ELF_LOCATION> <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2",
+    "pre_process":"python ./utils/call_cmake.py ./libraries/codal-rp2040/pico-sdk/tools/elf2uf2 -f elf2uf2 -o ./build",
     "generate_bin":true,
-    "generate_hex":true,
+    "generate_hex":false,
     "config":{
         "CODAL_TIMESTAMP":"uint64_t",
         "USB_EP_FLAG_NO_AUTO_ZLP":"0x01",
