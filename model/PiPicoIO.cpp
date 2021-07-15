@@ -40,7 +40,8 @@ using namespace codal;
   * Accepts a sequence of unique ID's used to distinguish events raised
   * by MicroBitPin instances on the default EventModel.
   */
-PiPicoIO::PiPicoIO() 
+PiPicoIO::PiPicoIO() :
+    led(ID_PIN_A0, (PinNumber)25, PIN_CAPABILITY_DIGITAL)
     // :
     // a0 (ID_PIN_A0, PIN_PA02, PIN_CAPABILITY_AD),
     // a1 (ID_PIN_A1, PIN_PA05, PIN_CAPABILITY_AD),

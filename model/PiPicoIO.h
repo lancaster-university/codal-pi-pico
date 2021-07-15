@@ -22,11 +22,11 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef CIRCUIT_PLAYGROUND_IO_H
-#define CIRCUIT_PLAYGROUND_IO_H
+#ifndef PI_PICO_IO_H
+#define PI_PICO_IO_H
 
 #include "CodalConfig.h"
-// #include "ZPin.h"
+#include "RP2040Pin.h"
 
 //
 // Component IDs for each pin.
@@ -49,7 +49,7 @@ namespace codal
     class PiPicoIO
     {
         public:
-
+        RP2040Pin       led;
         // ZPin          pin[0];
         // ZPin          a0;
         // ZPin          a1;
