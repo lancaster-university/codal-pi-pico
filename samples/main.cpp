@@ -3,8 +3,26 @@
 #define CODAL_PIN_SDK_BLINKY 0
 #define CODAL_MODEL_SDK_BLINKY 0
 #define CODAL_TIMER_BLINKY 0
-#define PURE_CODAL_BLINKY 1
+#define PURE_CODAL_BLINKY 0
+#define CODAL_GPIO_TEST 1
 
+
+#if CODAL_GPIO_TEST
+#include "PiPico.h"
+#include "CodalDmesg.h"
+using namespace codal;
+PiPico pico;
+
+int main() {
+    pico.init();
+    while(1) {
+        DMESG("GDVU %d", pico.io.GP2.getDigitalValue(PullMode::Up));
+        DMESG("GDVN %d", pico.io.GP2.getDigitalValue(PullMode::None));
+        DMESG("GDVD %d", pico.io.GP2.getDigitalValue(PullMode::Down));
+        pico.sleep(500);
+    }
+}
+#endif
 
 #if PURE_CODAL_BLINKY
 
