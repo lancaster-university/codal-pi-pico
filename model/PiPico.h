@@ -38,6 +38,8 @@ DEALINGS IN THE SOFTWARE.
 #include "NotifyEvents.h"
 
 #include "Button.h"
+#include "Timer.h"
+#include "RP2040LowLevelTimer.h"
 
 #include "PiPicoIO.h"
 
@@ -69,6 +71,8 @@ namespace codal
         uint8_t                     status;
 
         public:
+        RP2040LowLevelTimer         sysTimer;
+        Timer                       timer;
         MessageBus                  messageBus;
         PiPicoIO                    io;
 

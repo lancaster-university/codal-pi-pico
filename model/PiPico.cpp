@@ -38,6 +38,8 @@ PiPico* pico_device_instance = NULL;
   * that represent various device drivers used to control aspects of the micro:bit.
   */
 PiPico::PiPico() :
+    sysTimer(),
+    timer(sysTimer),
     messageBus(),
     io()
 {
