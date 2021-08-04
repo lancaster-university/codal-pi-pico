@@ -33,10 +33,10 @@
     },
     "definitions":"",
     "cpu_opts":"-mcpu=cortex-m0plus -mthumb",
-    "asm_flags":"-fno-exceptions -fno-unwind-tables",
+    "asm_flags":"",
     "c_flags":"",
-    "cpp_flags":"-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment",
-    "linker_flags":"-Wl,--no-wchar-size-warning",
+    "cpp_flags":"-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common",
+    "linker_flags":"",
     "libraries":[
         {
             "name":"codal-core",
