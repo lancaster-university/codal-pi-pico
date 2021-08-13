@@ -4,7 +4,32 @@
 #define CODAL_MODEL_SDK_BLINKY 0
 #define CODAL_TIMER_BLINKY 0
 #define PURE_CODAL_BLINKY 0
-#define CODAL_GPIO_TEST 1
+#define CODAL_GPIO_TEST 0
+#define CODAL_ZSINGLE_WIRE_TEST 1
+
+#if CODAL_ZSINGLE_WIRE_TEST
+#include "PiPico.h"
+#include "CodalDmesg.h"
+#include "ZSingleWireSerial.h"
+using namespace codal;
+PiPico pico;
+ZSingleWireSerial s(pico.io.GP0);
+
+void cb(uint16_t){
+
+}
+int main() {
+    pico.init();
+    pico.io.led.setDigitalValue(1);
+    char testString[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    s.cb = cb;
+    while(1) {
+        s.sendDMA((uint8_t*)testString, sizeof(testString));
+        pico.sleep(250);
+        pico.io.led.setDigitalValue(!pico.io.led.getDigitalValue());
+    }
+}
+#endif
 
 
 #if CODAL_GPIO_TEST
