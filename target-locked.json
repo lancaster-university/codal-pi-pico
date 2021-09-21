@@ -26,21 +26,21 @@
         "USB_EP_FLAG_NO_AUTO_ZLP": "0x01",
         "USE_ACCEL_LSB": 0
     },
-    "cpp_flags": "-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common",
+    "cpp_flags": "-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wno-ignored-qualifiers",
     "cpu_opts": "-mcpu=cortex-m0plus -mthumb",
     "definitions": "",
     "device": "PI-PICO",
     "generate_bin": true,
-    "generate_hex": false,
+    "generate_hex": true,
     "libraries": [
         {
-            "branch": "e2efc4cb034b04e5db5d7f6669667194b4a49024",
+            "branch": "f7653d0d6fd23e5794a0eec2a034263d4f529ccc",
             "name": "codal-core",
             "type": "git",
             "url": "https://github.com/lancaster-university/codal-core"
         },
         {
-            "branch": "971eef5b747323335c2ecf25dad1ba2586e5420e",
+            "branch": "d17cfdded1112521089be6ddf3fde088cb0536d9",
             "name": "codal-rp2040",
             "type": "git",
             "url": "https://github.com/lancaster-university/codal-rp2040"
@@ -50,6 +50,6 @@
     "post_process": "./build/elf2uf2 <OUTPUT_ELF_LOCATION> <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2",
     "pre_process": "python ./utils/call_cmake.py ./libraries/codal-rp2040/pico-sdk/tools/elf2uf2 -f elf2uf2 -o ./build",
     "processor": "RP2040",
-    "snapshot_version": "v0.0.3",
+    "snapshot_version": "v0.0.4",
     "toolchain": "ARM_GCC"
 }
