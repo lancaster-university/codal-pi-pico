@@ -6,7 +6,7 @@
     "post_process":"./build/elf2uf2 <OUTPUT_ELF_LOCATION> <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2",
     "pre_process":"python ./utils/call_cmake.py ./libraries/codal-rp2040/pico-sdk/tools/elf2uf2 -f elf2uf2 -o ./build",
     "generate_bin":true,
-    "generate_hex":false,
+    "generate_hex":true,
     "config":{
         "CODAL_TIMESTAMP":"uint64_t",
         "USB_EP_FLAG_NO_AUTO_ZLP":"0x01",
@@ -35,7 +35,7 @@
     "cpu_opts":"-mcpu=cortex-m0plus -mthumb",
     "asm_flags":"",
     "c_flags":"",
-    "cpp_flags":"-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common",
+    "cpp_flags":"-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wno-ignored-qualifiers",
     "linker_flags":"",
     "libraries":[
         {
