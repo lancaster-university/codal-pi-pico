@@ -13,7 +13,7 @@
         "DEVICE_SRAM_BASE":"0x20000000",
         "DEVICE_SRAM_END":"0x20042000",
         "DEVICE_STACK_BASE":"DEVICE_SRAM_END",
-        "DEVICE_STACK_SIZE":2048,
+        "DEVICE_STACK_SIZE":8192,
         "TARGET_DEBUG_CLASS":"NOT_IMPLEMENTED",
         "DEVICE_HEAP_ALLOCATOR":1,
         "DEVICE_TAG":0,
@@ -31,7 +31,7 @@
         "DEVICE_USB":0,
         "PROCESSOR_WORD_TYPE":"uint32_t"
     },
-    "definitions":"",
+    "definitions":"-DPICO_FLOAT_SUPPORT_ROM_V1 -DPICO_DOUBLE_SUPPORT_ROM_V1",
     "cpu_opts":"-mcpu=cortex-m0plus -mthumb",
     "asm_flags":"",
     "c_flags":"",
