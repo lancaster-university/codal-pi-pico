@@ -28,8 +28,15 @@
         "DEVICE_DMESG":1,
         "DEVICE_DMESG_BUFFER_SIZE":1024,
         "CODAL_DEBUG":0,
-        "DEVICE_USB":0,
-        "PROCESSOR_WORD_TYPE":"uint32_t"
+        "DEVICE_USB":1,
+        "USB_MAX_PKT_SIZE":64,
+        "USB_DEFAULT_VID": "0x2e8a",
+        "USB_DEFAULT_PID": "0x93bf",
+        "DEVICE_USB_ENDPOINTS":16,
+        "DEVICE_USB_ENDPOINT_SHARING":1,
+        "PROCESSOR_WORD_TYPE":"uint32_t",
+        "FORCE_RAM_FUNC": "__attribute__((noinline, long_call, section(\".time_critical.codal\")))",
+        "REAL_TIME_FUNC": "__attribute__((section(\".time_critical.codal\")))"
     },
     "definitions":"-DPICO_FLOAT_SUPPORT_ROM_V1 -DPICO_DOUBLE_SUPPORT_ROM_V1",
     "cpu_opts":"-mcpu=cortex-m0plus -mthumb",
