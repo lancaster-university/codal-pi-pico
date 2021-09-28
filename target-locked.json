@@ -47,7 +47,7 @@
             "url": "https://github.com/lancaster-university/codal-core"
         },
         {
-            "branch": "c26def2bb02cc82847dd8ee2055aa4581c2a351f",
+            "branch": "7e1a1ad8152fb392d4cd462fb40504413a19b1bb",
             "name": "codal-rp2040",
             "type": "git",
             "url": "https://github.com/lancaster-university/codal-rp2040"
@@ -57,6 +57,6 @@
     "post_process": "./build/elf2uf2 <OUTPUT_ELF_LOCATION> <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2",
     "pre_process": "python ./utils/call_cmake.py ./libraries/codal-rp2040/pico-sdk/tools/elf2uf2 -f elf2uf2 -o ./build",
     "processor": "RP2040",
-    "snapshot_version": "v0.0.5",
+    "snapshot_version": "v0.0.6",
     "toolchain": "ARM_GCC"
 }
