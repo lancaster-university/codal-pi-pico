@@ -15,32 +15,39 @@
         "DEVICE_SRAM_BASE": "0x20000000",
         "DEVICE_SRAM_END": "0x20042000",
         "DEVICE_STACK_BASE": "DEVICE_SRAM_END",
-        "DEVICE_STACK_SIZE": 2048,
+        "DEVICE_STACK_SIZE": 8192,
         "DEVICE_TAG": 0,
-        "DEVICE_USB": 0,
+        "DEVICE_USB": 1,
+        "DEVICE_USB_ENDPOINTS": 16,
+        "DEVICE_USB_ENDPOINT_SHARING": 1,
         "EVENT_LISTENER_DEFAULT_FLAGS": "MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY",
+        "FORCE_RAM_FUNC": "__attribute__((noinline, long_call, section(\".time_critical.codal\")))",
         "MESSAGE_BUS_LISTENER_MAX_QUEUE_DEPTH": 10,
         "PROCESSOR_WORD_TYPE": "uint32_t",
+        "REAL_TIME_FUNC": "__attribute__((section(\".time_critical.codal\")))",
         "SCHEDULER_TICK_PERIOD_US": 4000,
         "TARGET_DEBUG_CLASS": "NOT_IMPLEMENTED",
+        "USB_DEFAULT_PID": "0x93bf",
+        "USB_DEFAULT_VID": "0x2e8a",
         "USB_EP_FLAG_NO_AUTO_ZLP": "0x01",
+        "USB_MAX_PKT_SIZE": 64,
         "USE_ACCEL_LSB": 0
     },
     "cpp_flags": "-std=c++11 -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wno-ignored-qualifiers",
     "cpu_opts": "-mcpu=cortex-m0plus -mthumb",
-    "definitions": "",
+    "definitions": "-DPICO_FLOAT_SUPPORT_ROM_V1 -DPICO_DOUBLE_SUPPORT_ROM_V1",
     "device": "PI-PICO",
     "generate_bin": true,
     "generate_hex": true,
     "libraries": [
         {
-            "branch": "f7653d0d6fd23e5794a0eec2a034263d4f529ccc",
+            "branch": "ab99d299e25f40509c3dc79b510b4d57f0b595d3",
             "name": "codal-core",
             "type": "git",
             "url": "https://github.com/lancaster-university/codal-core"
         },
         {
-            "branch": "d17cfdded1112521089be6ddf3fde088cb0536d9",
+            "branch": "c26def2bb02cc82847dd8ee2055aa4581c2a351f",
             "name": "codal-rp2040",
             "type": "git",
             "url": "https://github.com/lancaster-university/codal-rp2040"
@@ -50,6 +57,6 @@
     "post_process": "./build/elf2uf2 <OUTPUT_ELF_LOCATION> <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2",
     "pre_process": "python ./utils/call_cmake.py ./libraries/codal-rp2040/pico-sdk/tools/elf2uf2 -f elf2uf2 -o ./build",
     "processor": "RP2040",
-    "snapshot_version": "v0.0.4",
+    "snapshot_version": "v0.0.5",
     "toolchain": "ARM_GCC"
 }
