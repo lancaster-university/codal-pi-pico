@@ -41,13 +41,13 @@
     "generate_hex": true,
     "libraries": [
         {
-            "branch": "ab99d299e25f40509c3dc79b510b4d57f0b595d3",
+            "branch": "c91fff71b71589351be665145679860224c75d16",
             "name": "codal-core",
             "type": "git",
             "url": "https://github.com/lancaster-university/codal-core"
         },
         {
-            "branch": "1f8141c3e2f3ae35018d0d1c035f9dbc33e426af",
+            "branch": "8590ef14a3d2c11838795ad8b19f1920700b86a6",
             "name": "codal-rp2040",
             "type": "git",
             "url": "https://github.com/lancaster-university/codal-rp2040"
@@ -57,6 +57,6 @@
     "post_process": "./build/elf2uf2 <OUTPUT_ELF_LOCATION> <OUTPUT_HEX_DESTINATION>/<OUTPUT_HEX_NAME>.uf2",
     "pre_process": "python ./utils/call_cmake.py ./libraries/codal-rp2040/pico-sdk/tools/elf2uf2 -f elf2uf2 -o ./build",
     "processor": "RP2040",
-    "snapshot_version": "v0.0.8",
+    "snapshot_version": "v0.0.9",
     "toolchain": "ARM_GCC"
 }
