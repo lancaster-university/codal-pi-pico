@@ -30,6 +30,7 @@
         "USB_DEFAULT_PID": "0x93bf",
         "USB_DEFAULT_VID": "0x2e8a",
         "USB_EP_FLAG_NO_AUTO_ZLP": "0x01",
+        "USB_EP_FLAG_ASYNC":"0x02",
         "USB_MAX_PKT_SIZE": 64,
         "USE_ACCEL_LSB": 0
     },

@@ -10,6 +10,7 @@
     "config":{
         "CODAL_TIMESTAMP":"uint64_t",
         "USB_EP_FLAG_NO_AUTO_ZLP":"0x01",
+        "USB_EP_FLAG_ASYNC":"0x02",
         "DEVICE_SRAM_BASE":"0x20000000",
         "DEVICE_SRAM_END":"0x20042000",
         "DEVICE_STACK_BASE":"DEVICE_SRAM_END",
